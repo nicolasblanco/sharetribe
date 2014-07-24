@@ -1727,6 +1727,9 @@ fi:
       default_textual_feedback: "Kaikki meni hienosti, paljon kiitoksia!"
     testimonial:
       about_listing: "liittyen ilmoitukseen"
+  date:
+    formats:
+      long_with_abbr_day_name: "%a %-d.%-m.%Y"
   time:
     formats:
       short: "%e. %b %Y kello %H:%M"

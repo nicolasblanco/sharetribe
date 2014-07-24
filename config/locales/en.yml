@@ -1332,6 +1332,9 @@ en:
       payment: "Payment"
       exp: "Exp:"
       you_will_be_charged: "You will be charged only if %{author} accepts the transaction. %{author} needs to accept the transaction within 5 days. If %{author} declines or does not respond, no charge is made."
+      day: "day"
+      days: "days"
+      price_per_day: "Price per day: %{price}"
   mapview:
     index:
       all_categories: "All categories"
@@ -1660,6 +1663,9 @@ en:
       default_textual_feedback: "Everything went smoothly, thanks a lot!"
     testimonial:
       about_listing: "about listing"
+  date:
+    formats:
+      long_with_abbr_day_name: "%a, %b %d, %Y"
   time:
     formats:
       short: "%e %b %Y at %H:%M"

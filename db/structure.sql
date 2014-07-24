@@ -13,7 +13,7 @@ CREATE TABLE `auth_tokens` (
 
 CREATE TABLE `bookings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `conversation_id` int(11) DEFAULT NULL,
+  `listing_conversation_id` int(11) DEFAULT NULL,
   `start_on` date DEFAULT NULL,
   `end_on` date DEFAULT NULL,
   `created_at` datetime NOT NULL,
@@ -1727,6 +1727,8 @@ INSERT INTO schema_migrations (version) VALUES ('20140226121423');
 
 INSERT INTO schema_migrations (version) VALUES ('20140227102627');
 
+INSERT INTO schema_migrations (version) VALUES ('20140227145229');
+
 INSERT INTO schema_migrations (version) VALUES ('20140228164206');
 
 INSERT INTO schema_migrations (version) VALUES ('20140228164428');
@@ -1856,3 +1858,5 @@ INSERT INTO schema_migrations (version) VALUES ('20140711094414');
 INSERT INTO schema_migrations (version) VALUES ('20140724084559');
 
 INSERT INTO schema_migrations (version) VALUES ('20140724093459');
+
+INSERT INTO schema_migrations (version) VALUES ('20140724123125');
