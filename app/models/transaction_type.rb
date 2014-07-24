@@ -10,6 +10,9 @@ class TransactionType < ActiveRecord::Base
 
   validates_presence_of :community
 
+  validates :price_per, inclusion: { in: %w(day),
+    message: "%{value} is not valid" }
+
   def display_name(locale)
     TranslationCache.new(self, :translations).translate(locale, :name)
   end
