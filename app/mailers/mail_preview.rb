@@ -8,11 +8,18 @@ class MailPreview < MailView
 
   def new_payment
     # instead of mock data, show last suitable payment
-    payment = CheckoutPayment.last
-    throw "No CheckoutPayments in DB, can't show this mail template." if payment.nil?
-    community = payment.community
+    # payment = CheckoutPayment.last
+    # throw "No CheckoutPayments in DB, can't show this mail template." if payment.nil?
+    # community = payment.community
 
-    PersonMailer.new_payment(payment, community)
+    community = FactoryGirl.build(:community, payment_gateway: FactoryGirl.create(:checkout_payment_gateway))
+
+    binding.pry
+    listing = FactoryGirl.build(:listing, communities: [community])
+    payment = FactoryGirl.build(:checkout_payment, payment_gateway: community.payment_gateway)
+    conversation = FactoryGirl.build(:listing_conversation, listing: listing, payment: payment)
+
+    PersonMailer.new_payment(payment, payment.community)
   end
 
   def payment_settings_reminder

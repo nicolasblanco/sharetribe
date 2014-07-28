@@ -75,6 +75,7 @@ FactoryGirl.define do
 
     factory :listing_conversation, class: 'ListingConversation' do
       listing
+      payment
     end
   end
 
@@ -272,6 +273,7 @@ FactoryGirl.define do
 
   factory :payment do
     community
+    conversation
 
     factory :braintree_payment, class: 'BraintreePayment' do
       payer
