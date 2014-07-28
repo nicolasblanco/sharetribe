@@ -74,7 +74,7 @@ FactoryGirl.define do
     community
 
     factory :listing_conversation, class: 'ListingConversation' do
-      listing
+      listing { |conversation| conversation.association(:listing, strategy: :build) }
       payment
     end
   end
@@ -281,6 +281,7 @@ FactoryGirl.define do
       status "pending"
       payment_gateway { FactoryGirl.build(:braintree_payment_gateway) }
       currency "USD"
+      sum_cents 500
     end
 
     factory :checkout_payment, class: 'CheckoutPayment' do
