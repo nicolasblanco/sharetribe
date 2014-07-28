@@ -54,7 +54,7 @@ class Listing < ActiveRecord::Base
   before_validation :set_valid_until_time
   before_save :downcase_tags, :set_community_visibilities
 
-  validates_presence_of :author_id
+  validates_presence_of :author
   validates_length_of :title, :in => 2..60, :allow_nil => false
 
   before_create :set_sort_date_to_now
